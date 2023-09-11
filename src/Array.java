@@ -39,4 +39,12 @@ public class Array {
             System.out.println(formattedString);
         }
     }
+
+    public int indexOf(int searchValue){
+        for(int i=0; i < currentIdx; i++){
+            if(numbers[i] == searchValue)
+                return i;
+        }
+        return -1;
+    }
 }

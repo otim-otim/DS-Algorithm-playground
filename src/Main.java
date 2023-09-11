@@ -20,5 +20,8 @@ public class Main {
         numbers.removeAt(4);
         System.out.println("======================");
         numbers.print();
+        System.out.println("======================");
+        System.out.println("index of 21 is :" + numbers.indexOf(21));
+
     }
 }
