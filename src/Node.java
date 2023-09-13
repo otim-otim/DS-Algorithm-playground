@@ -1,9 +1,9 @@
 public class Node {
     private int value;
-    private Node node;
-    public Node(int value, Node node){
+    private Node next;
+    public Node(int value){
         this.value = value;
-        this.node = node;
+
     }
 
     public int getValue(){
@@ -14,11 +14,11 @@ public class Node {
         value = newValue;
     }
 
-    public void setNode(Node newNode){
-        node = newNode;
+    public void setNext(Node newNode){
+        next = newNode;
     }
     public Node nextNode(){
-        return node;
+        return next;
     }
 
 

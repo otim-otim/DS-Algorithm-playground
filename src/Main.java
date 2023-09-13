@@ -23,5 +23,15 @@ public class Main {
         System.out.println("======================");
         System.out.println("index of 21 is :" + numbers.indexOf(21));
 
+        //linked lists
+
+        LinkedList list = new LinkedList();
+        list.addLast(83);
+        list.addLast(41);
+        list.addLast(24);
+
+        System.out.println("====================================");
+//        System.out.println(list);
+
     }
 }
