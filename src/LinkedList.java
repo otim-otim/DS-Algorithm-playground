@@ -27,20 +27,20 @@ public class LinkedList {
         }
     }
 
-//    public int indexOf(int value){
-//        int index = 0;
-//        Node currentNode = first;
-//        while(currentNode != null){
-//            if(currentNode.getValue() == value)
-//                return index;
-//            else {
-//                index++;
-//                currentNode = currentNode.nextNode();
-//            }
-//
-//        }
-//
-//        return -1;
-//
-//    }
+    public int indexOf(int value){
+        int index = 0;
+        Node currentNode = first;
+        while(currentNode != null){
+            if(currentNode.getValue() == value)
+                return index;
+            else {
+                index++;
+                currentNode = currentNode.nextNode();
+            }
+
+        }
+
+        return -1;
+
+    }
 }
