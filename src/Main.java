@@ -33,11 +33,15 @@ public class Main {
         list.addFirst(23);
         list.removeLast();
         list.removeFirst();
+        list.addLast(101);
+        list.addLast(256);
+        list.addFirst(15);
 
         System.out.println("====================================");
         System.out.println("index of 41 is: "+ list.indexOf(41));
         System.out.println("does list contain 47 :"+ list.contains(47));
         System.out.println("last list item is :"+ list.last.getValue());
+        System.out.println("the linked list has :"+ list.size() + " items");
 
     }
 }

@@ -3,6 +3,8 @@ public class LinkedList {
     Node last;
     Node first;
 
+    private int nodeCount = 0;
+
 
     public void addLast(int value){
         Node node = new Node(value);
@@ -13,6 +15,7 @@ public class LinkedList {
             last.setNext(node);
             last = node;
         }
+        nodeCount++;
 
     }
 
@@ -25,6 +28,7 @@ public class LinkedList {
             node.setNext(first);
             first = node;
         }
+        nodeCount++;
     }
 
     public int indexOf(int value){
@@ -59,6 +63,7 @@ public class LinkedList {
         Node currentNode = getPreviousNode();
         currentNode.setNext(null);
         last = currentNode;
+        nodeCount--;
 
     }
 
@@ -66,6 +71,7 @@ public class LinkedList {
         Node newNode = first.nextNode();
         first.setNext(null);
         first = newNode;
+        nodeCount--;
     }
 
     private Node getPreviousNode(){
@@ -76,5 +82,9 @@ public class LinkedList {
             else currentNode.setNext(null);
         }
         return currentNode;
+    }
+
+    public int size(){
+        return nodeCount;
     }
 }
