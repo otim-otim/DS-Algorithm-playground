@@ -43,5 +43,10 @@ public class Main {
         System.out.println("last list item is :"+ list.last.getValue());
         System.out.println("the linked list has :"+ list.size() + " items");
 
+        System.out.println("====================================");
+
+        Array convertedArray = list.toArray();
+        convertedArray.print();
+
     }
 }

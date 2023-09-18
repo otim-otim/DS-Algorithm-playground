@@ -8,7 +8,7 @@ public class LinkedList {
 
     public void addLast(int value){
         Node node = new Node(value);
-        node.setNext(node);
+        node.setNext(null);
         if(first == null)
             first = last = node;
         else{
@@ -86,5 +86,17 @@ public class LinkedList {
 
     public int size(){
         return nodeCount;
+    }
+
+    public Array toArray(){
+        if(first == null) throw  new IllegalArgumentException();
+
+        Array newArray = new Array(size() );
+        Node currentNode = first;
+        while(currentNode.nextNode() != null){
+            newArray.insert(currentNode.getValue());
+            currentNode = currentNode.nextNode();
+        }
+        return newArray;
     }
 }
