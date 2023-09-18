@@ -51,14 +51,30 @@ public class LinkedList {
     }
 
     public void removeLast(){
-        Node currentNode = first;
-        while(currentNode != last){
-            if(currentNode.nextNode() != last)
-                currentNode = currentNode.nextNode();
-            else {
-                currentNode.setNext(null);
-                last = currentNode;
-            }
+        if(first == last ) {
+            first = last = null;
+            return;
         }
+        if(first == null) throw new IllegalArgumentException();
+        Node currentNode = getPreviousNode();
+        currentNode.setNext(null);
+        last = currentNode;
+
+    }
+
+    public void removeFirst(){
+        Node newNode = first.nextNode();
+        first.setNext(null);
+        first = newNode;
+    }
+
+    private Node getPreviousNode(){
+        Node currentNode = first;
+        while(currentNode != last && currentNode.nextNode() != null) {
+            if (currentNode.nextNode() != last )
+                currentNode = currentNode.nextNode();
+            else currentNode.setNext(null);
+        }
+        return currentNode;
     }
 }

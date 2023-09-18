@@ -32,6 +32,7 @@ public class Main {
         list.addFirst(47);
         list.addFirst(23);
         list.removeLast();
+        list.removeFirst();
 
         System.out.println("====================================");
         System.out.println("index of 41 is: "+ list.indexOf(41));
