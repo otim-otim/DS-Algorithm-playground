@@ -34,6 +34,7 @@ public class LinkedList {
             if(currentNode.getValue() == value)
                 return index;
             else {
+                if(currentNode == last) return -1;
                 index++;
                 currentNode = currentNode.nextNode();
             }
@@ -45,15 +46,7 @@ public class LinkedList {
     }
 
     public boolean contains(int item){
-        Node currentNode = first;
-        while(currentNode != null){
-            if(currentNode.getValue() == item) return true;
-            else {
-                if(currentNode == last) return false;
-                currentNode = currentNode.nextNode();
 
-            }
-        }
-        return false;
+        return indexOf(item) != -1;
     }
 }

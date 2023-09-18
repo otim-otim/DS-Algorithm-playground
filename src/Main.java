@@ -28,8 +28,8 @@ public class Main {
         LinkedList list = new LinkedList();
         list.addLast(83);
         list.addLast(41);
-        list.addLast(24);
-        list.addFirst(47);
+//        list.addLast(24);
+//        list.addFirst(47);
         list.addFirst(23);
 
         System.out.println("====================================");
