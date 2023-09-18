@@ -28,13 +28,15 @@ public class Main {
         LinkedList list = new LinkedList();
         list.addLast(83);
         list.addLast(41);
-//        list.addLast(24);
-//        list.addFirst(47);
+        list.addLast(24);
+        list.addFirst(47);
         list.addFirst(23);
+        list.removeLast();
 
         System.out.println("====================================");
         System.out.println("index of 41 is: "+ list.indexOf(41));
-        System.out.println("does list contain 47 :"+ list.contains(17));
+        System.out.println("does list contain 47 :"+ list.contains(47));
+        System.out.println("last list item is :"+ list.last.getValue());
 
     }
 }

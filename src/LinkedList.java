@@ -49,4 +49,16 @@ public class LinkedList {
 
         return indexOf(item) != -1;
     }
+
+    public void removeLast(){
+        Node currentNode = first;
+        while(currentNode != last){
+            if(currentNode.nextNode() != last)
+                currentNode = currentNode.nextNode();
+            else {
+                currentNode.setNext(null);
+                last = currentNode;
+            }
+        }
+    }
 }
