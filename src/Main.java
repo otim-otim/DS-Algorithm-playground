@@ -29,9 +29,11 @@ public class Main {
         list.addLast(83);
         list.addLast(41);
         list.addLast(24);
+        list.addFirst(47);
+        list.addFirst(23);
 
         System.out.println("====================================");
-//        System.out.println(list);
+//        System.out.println("index of 41 is"+ list.indexOf(41));
 
     }
 }

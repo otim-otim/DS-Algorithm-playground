@@ -17,6 +17,30 @@ public class LinkedList {
     }
 
     public void addFirst(int item){
-
+        Node node = new Node(item);
+        if(first == null){
+            node.setNext(node);
+            first = last = node;
+        }else{
+            node.setNext(first);
+            first = node;
+        }
     }
+
+//    public int indexOf(int value){
+//        int index = 0;
+//        Node currentNode = first;
+//        while(currentNode != null){
+//            if(currentNode.getValue() == value)
+//                return index;
+//            else {
+//                index++;
+//                currentNode = currentNode.nextNode();
+//            }
+//
+//        }
+//
+//        return -1;
+//
+//    }
 }
