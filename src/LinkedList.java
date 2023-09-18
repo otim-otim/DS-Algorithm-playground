@@ -43,4 +43,17 @@ public class LinkedList {
         return -1;
 
     }
+
+    public boolean contains(int item){
+        Node currentNode = first;
+        while(currentNode != null){
+            if(currentNode.getValue() == item) return true;
+            else {
+                if(currentNode == last) return false;
+                currentNode = currentNode.nextNode();
+
+            }
+        }
+        return false;
+    }
 }

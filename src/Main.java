@@ -33,7 +33,8 @@ public class Main {
         list.addFirst(23);
 
         System.out.println("====================================");
-        System.out.println("index of 41 is"+ list.indexOf(41));
+        System.out.println("index of 41 is: "+ list.indexOf(41));
+        System.out.println("does list contain 47 :"+ list.contains(17));
 
     }
 }
