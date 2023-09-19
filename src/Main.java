@@ -36,6 +36,9 @@ public class Main {
         list.addLast(101);
         list.addLast(256);
         list.addFirst(15);
+        list.addLast(107);
+        list.addLast(255);
+        list.addFirst(156);
 
         System.out.println("====================================");
         System.out.println("index of 41 is: "+ list.indexOf(41));
@@ -56,6 +59,9 @@ public class Main {
         list.reverseProxy();
         reversedArray = list.toArray();
         reversedArray.print();
+
+        System.out.println("====================================kth node");
+        System.out.println("the 5th node from the end is:" + list.getKthNodeFromTheEnd(5));
 
 
 

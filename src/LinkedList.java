@@ -136,4 +136,17 @@ public class LinkedList {
         last.setNext(null);
         first = previous;
     }
+
+    public int getKthNodeFromTheEnd(int k){
+        Node head= first;
+        Node tail = first;
+        for(int i = 0 ; i< k-1; i++)
+            tail = tail.nextNode();
+        while(tail != last){
+            head = head.nextNode();
+            tail = tail.nextNode();
+        }
+        return head.getValue();
+
+    }
 }
