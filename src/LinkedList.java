@@ -101,7 +101,7 @@ public class LinkedList {
     }
 
     public void reverse(){
-        if(first == null) throw new IllegalArgumentException();
+        if(first == null) return;
         Node currentNode = last;
         do{
             Node previous = getPreviousNode(currentNode);
@@ -121,7 +121,7 @@ public class LinkedList {
     }
 
     public void reverseProxy(){
-        if(first == null) throw new IllegalArgumentException();
+        if(first == null) return;
         Node previous = first;
         Node current = first.nextNode();
 
