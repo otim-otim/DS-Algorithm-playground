@@ -60,9 +60,8 @@ public class LinkedList {
             return;
         }
         if(first == null) throw new IllegalArgumentException();
-        Node currentNode = getPreviousNode();
-        currentNode.setNext(null);
-        last = currentNode;
+        last = getPreviousNode(last);
+        last.setNext(null);
         nodeCount--;
 
     }
@@ -74,12 +73,13 @@ public class LinkedList {
         nodeCount--;
     }
 
-    private Node getPreviousNode(){
+    private Node getPreviousNode(Node node){
         Node currentNode = first;
-        while(currentNode != last && currentNode.nextNode() != null) {
-            if (currentNode.nextNode() != last )
+        while(currentNode != node && currentNode.nextNode() != null) {
+            if (currentNode.nextNode() != node )
                 currentNode = currentNode.nextNode();
-            else currentNode.setNext(null);
+//            else if (node == last) currentNode.setNext(null);
+            else break;
         }
         return currentNode;
     }
@@ -98,5 +98,24 @@ public class LinkedList {
             currentNode = currentNode.nextNode();
         }
         return newArray;
+    }
+
+    public void reverse(){
+        Node currentNode = last;
+        do{
+            Node previous = getPreviousNode(currentNode);
+            currentNode.setNext(previous);
+            currentNode = previous;
+            if(currentNode == first) {
+                currentNode.setNext(null);
+                Node temporaryNode = last;
+                last = first;
+                first = temporaryNode;
+            }
+
+        }
+        while(currentNode.nextNode() != null);
+
+
     }
 }

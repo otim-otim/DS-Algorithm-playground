@@ -48,5 +48,10 @@ public class Main {
         Array convertedArray = list.toArray();
         convertedArray.print();
 
+        System.out.println("====================================reversed array");
+        list.reverse();
+        Array reversedArray = list.toArray();
+        reversedArray.print();
+
     }
 }
