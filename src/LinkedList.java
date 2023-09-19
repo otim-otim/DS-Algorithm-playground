@@ -139,6 +139,7 @@ public class LinkedList {
 
     public int getKthNodeFromTheEnd(int k){
         if(k > nodeCount) throw new IllegalArgumentException();
+        if(first == null) throw new IllegalStateException();
         Node head= first;
         Node tail = first;
         for(int i = 0 ; i< k-1; i++)
