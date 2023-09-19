@@ -52,6 +52,12 @@ public class Main {
         list.reverse();
         Array reversedArray = list.toArray();
         reversedArray.print();
+        System.out.println("====================================2nd reversed array");
+        list.reverseProxy();
+        reversedArray = list.toArray();
+        reversedArray.print();
+
+
 
     }
 }

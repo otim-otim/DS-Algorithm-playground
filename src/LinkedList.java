@@ -118,4 +118,20 @@ public class LinkedList {
 
 
     }
+
+    public void reverseProxy(){
+        Node previous = first;
+        Node current = first.nextNode();
+
+        while(current != null){
+            Node next = current.nextNode();
+            current.setNext(previous);
+            previous = current;
+            current = next;
+        }
+
+        last = first;
+        last.setNext(null);
+        first = previous;
+    }
 }
