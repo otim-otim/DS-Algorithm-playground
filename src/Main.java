@@ -65,7 +65,7 @@ public class Main {
         System.out.println("the 5th node from the end is:" + list.getKthNodeFromTheEnd(5));
 //        reversing a string using a stack
         System.out.println("====================================stacks");
-        String newString = "<][(kalash)]>";
+        String newString = "><][(kalash)]>";
         System.out.println("the reversed string is: " +  StringReverser.reverseString(newString));
         System.out.println("is string balanced: " +  StringReverser.checkStringBalance(newString));
 

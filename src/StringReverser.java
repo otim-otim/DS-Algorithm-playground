@@ -18,6 +18,7 @@ public class StringReverser {
             if(i == '(' || i == '[' || i== '<')
                 balanceStack.push(i);
             else if (i == ')' || i == ']' || i == '>') {
+                if(balanceStack.empty()) return false;
                 char lastBracket = balanceStack.peek();
                 boolean isBalancing = false;
                 switch(i){
