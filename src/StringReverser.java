@@ -22,27 +22,28 @@ public class StringReverser {
                 boolean isBalancing = false;
                 switch(i){
                     case ')':
-                        if(lastBracket == '(' )
-                            isBalancing = true;
+                        isBalancing = lastBracket == '(' ? true : false;
                         break;
                     case ']':
-                        if(lastBracket == '[' )
-                            isBalancing = true;
+                        isBalancing = lastBracket == '[' ? true : false;
                         break;
                     case '>':
-                        if(lastBracket == '<' )
-                            isBalancing = true;
+                        isBalancing = lastBracket == '<' ? true : false;
                         break;
 
 
                 }
                 if(isBalancing)
                     balanceStack.pop();
-                else balanceStack.push(i);
+                else {
+                    balanceStack.push(i);
+                    return false;
+                }
+
 
             }
         }
 
-        return balanceStack.size() == 0 ;
+        return balanceStack.empty()  ;
     }
 }
