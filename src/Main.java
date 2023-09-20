@@ -1,3 +1,4 @@
+import java.util.Stack;
 
 // Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
 // then press Enter. You can now see whitespace characters in your code.
@@ -62,6 +63,14 @@ public class Main {
 
         System.out.println("====================================kth node");
         System.out.println("the 5th node from the end is:" + list.getKthNodeFromTheEnd(5));
+//        reversing a string using a stack
+        System.out.println("====================================stacks");
+        System.out.println("the reversed string is:" +  StringReverser.reverseString("kalash"));
+//        String newString = "kalash";
+
+
+
+
 
 
 
