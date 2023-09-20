@@ -71,6 +71,21 @@ public class Main {
         System.out.println("the reversed string is: " +  reverser.reverseString());
         System.out.println("is string balanced: " +  reverser.checkStringBalance());
 
+        System.out.println("====================================manual stacks from scratch");
+        ManualStack manualStack = new ManualStack();
+
+        System.out.println("static is empty: " +  manualStack.isEmpty());
+
+        manualStack.push(23);
+        manualStack.push(24);
+        manualStack.push(25);
+        manualStack.push(26);
+        manualStack.push(27);
+
+        System.out.println("current stack: " +  manualStack.isEmpty());
+        manualStack.pop();
+        manualStack.pop();
+
 
 
 
