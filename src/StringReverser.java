@@ -2,6 +2,7 @@ import java.util.Stack;
 
 public class StringReverser {
     public static String reverseString(String string){
+        if(string == null) throw new IllegalArgumentException();
         Stack<Character> reversal = new Stack<Character>();
         StringBuffer reversed = new StringBuffer();
         for (char i:string.toCharArray() )
