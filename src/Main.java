@@ -1,3 +1,5 @@
+import java.util.LinkedList;
+import java.util.Queue;
 import java.util.Stack;
 
 // Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
@@ -44,25 +46,25 @@ public class Main {
         System.out.println("====================================");
         System.out.println("index of 41 is: "+ list.indexOf(41));
         System.out.println("does list contain 47 :"+ list.contains(47));
-        System.out.println("last list item is :"+ list.last.getValue());
+//        System.out.println("last list item is :"+ list.last.getValue());
         System.out.println("the linked list has :"+ list.size() + " items");
 
         System.out.println("====================================");
 
-        Array convertedArray = list.toArray();
-        convertedArray.print();
+//        Array convertedArray = list.toArray();
+//        convertedArray.print();
 
         System.out.println("====================================reversed array");
-        list.reverse();
-        Array reversedArray = list.toArray();
-        reversedArray.print();
-        System.out.println("====================================2nd reversed array");
-        list.reverseProxy();
-        reversedArray = list.toArray();
-        reversedArray.print();
+//        list.reverse();
+//        Array reversedArray = list.toArray();
+//        reversedArray.print();
+//        System.out.println("====================================2nd reversed array");
+////        list.reverseProxy();
+//        reversedArray = list.toArray();
+//        reversedArray.print();
 
         System.out.println("====================================kth node");
-        System.out.println("the 5th node from the end is:" + list.getKthNodeFromTheEnd(5));
+//        System.out.println("the 5th node from the end is:" + list.getKthNodeFromTheEnd(5));
 //        reversing a string using a stack
 
         System.out.println("====================================stacks");
@@ -85,6 +87,18 @@ public class Main {
         System.out.println("current stack: " +  manualStack.isEmpty());
         manualStack.pop();
         manualStack.pop();
+
+        System.out.println("====================================reversing a stack");
+        Queue<Integer> queue = new LinkedList<Integer>();
+        queue.add(12);
+        queue.add(14);
+        queue.add(19);
+        queue.add(178);
+        queue.add(124);
+
+        System.out.println("the current queue: "+ queue.toString());
+        QueueImplementation.reverse(queue);
+        System.out.println("the reversed queue: "+ queue.toString());
 
 
 
