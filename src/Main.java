@@ -116,7 +116,24 @@ public class Main {
         System.out.println("current head: "+ arrayQueue.peek());
         arrayQueue.printQueue();
 
+        System.out.println("====================================stack queue");
+        StackQueue stackQueue = new StackQueue(6);
+        stackQueue.enqueue(34);
+        stackQueue.enqueue(54);
+        stackQueue.enqueue(64);
+        stackQueue.enqueue(39);
+        stackQueue.enqueue(290);
+        stackQueue.enqueue(341);
 
+        stackQueue.printQueue();
+
+        stackQueue.dequeue();
+        stackQueue.enqueue(444);
+        stackQueue.printQueue();
+        stackQueue.dequeue();
+        stackQueue.enqueue(477);
+
+        stackQueue.printQueue();
 
 
 
