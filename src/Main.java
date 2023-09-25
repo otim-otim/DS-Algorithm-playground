@@ -112,8 +112,10 @@ public class Main {
 
         arrayQueue.printQueue();
         System.out.println("dequeue: "+ arrayQueue.dequeue());
+        arrayQueue.enqueue(43);
         System.out.println("current head: "+ arrayQueue.peek());
-//        arrayQueue.enqueue(83);
+        arrayQueue.printQueue();
+
 
 
 
