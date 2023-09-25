@@ -88,7 +88,7 @@ public class Main {
         manualStack.pop();
         manualStack.pop();
 
-        System.out.println("====================================reversing a stack");
+        System.out.println("====================================reversing a queue");
         Queue<Integer> queue = new LinkedList<Integer>();
         queue.add(12);
         queue.add(14);
@@ -100,6 +100,19 @@ public class Main {
         QueueImplementation.reverse(queue);
         System.out.println("the reversed queue: "+ queue.toString());
 
+
+        System.out.println("====================================array queue");
+        ArrayQueue arrayQueue = new ArrayQueue(5);
+        arrayQueue.enqueue(3);
+        arrayQueue.enqueue(8);
+        arrayQueue.enqueue(9);
+        arrayQueue.enqueue(23);
+        arrayQueue.enqueue(32);
+        arrayQueue.dequeue(75);
+
+        arrayQueue.printQueue();
+        System.out.println("current head: "+ arrayQueue.peek());
+//        arrayQueue.enqueue(83);
 
 
 

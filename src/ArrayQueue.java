@@ -18,7 +18,7 @@ public class ArrayQueue {
     }
 
     public boolean isFull(){
-        return rear == arrayQueue.length - 1;
+        return rear >= arrayQueue.length;
     }
 
     public boolean isEmpty(){
@@ -27,5 +27,9 @@ public class ArrayQueue {
 
     public int peek(){
         return arrayQueue[front];
+    }
+
+    public void printQueue(){
+        System.out.println("the array queue: "+ arrayQueue.toString());
     }
 }
