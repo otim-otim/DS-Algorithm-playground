@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class ArrayQueue {
     int[] arrayQueue;
     int front = 0;
@@ -12,9 +14,11 @@ public class ArrayQueue {
         if(!isFull()) rear++;
     }
 
-    public void dequeue(int idx){
+    public int dequeue(){
         if(isEmpty()) throw new IllegalArgumentException();
-        front++;
+        int item = arrayQueue[front];
+        arrayQueue[front++] = 0;
+        return item;
     }
 
     public boolean isFull(){
@@ -30,6 +34,6 @@ public class ArrayQueue {
     }
 
     public void printQueue(){
-        System.out.println("the array queue: "+ arrayQueue.toString());
+        System.out.println("the array queue: "+ Arrays.toString(arrayQueue));
     }
 }

@@ -108,9 +108,10 @@ public class Main {
         arrayQueue.enqueue(9);
         arrayQueue.enqueue(23);
         arrayQueue.enqueue(32);
-        arrayQueue.dequeue(75);
+        ;
 
         arrayQueue.printQueue();
+        System.out.println("dequeue: "+ arrayQueue.dequeue());
         System.out.println("current head: "+ arrayQueue.peek());
 //        arrayQueue.enqueue(83);
 
