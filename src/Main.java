@@ -152,6 +152,9 @@ public class Main {
         System.out.println("current count: " + priorityQueue.count);
         priorityQueue.printQueue();
 
+        priorityQueue.removeItem();
+        priorityQueue.printQueue();
+
 
 
 
