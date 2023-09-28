@@ -135,6 +135,23 @@ public class Main {
 
         stackQueue.printQueue();
 
+        System.out.println("====================================priority queue");
+        PriorityQueue priorityQueue = new PriorityQueue(6);
+        priorityQueue.addItem(17);
+        System.out.println("current count: " + priorityQueue.count);
+        priorityQueue.addItem(12);
+        System.out.println("current count: " + priorityQueue.count);
+        priorityQueue.addItem(10);
+        System.out.println("current count: " + priorityQueue.count);
+        priorityQueue.printQueue();
+        priorityQueue.addItem(16);
+        System.out.println("current count: " + priorityQueue.count);
+        priorityQueue.addItem(19);
+        System.out.println("current count: " + priorityQueue.count);
+        priorityQueue.addItem(20);
+        System.out.println("current count: " + priorityQueue.count);
+        priorityQueue.printQueue();
+
 
 
 
