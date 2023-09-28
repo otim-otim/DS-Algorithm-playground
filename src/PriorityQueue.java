@@ -13,7 +13,11 @@ public class PriorityQueue {
 
             throw new IllegalStateException();
         }
+        shiftItemsToInsert(item);
+        count = count >= queue.length - 1 ? count : count+ 1;
+    }
 
+    private void shiftItemsToInsert(int item) {
         for(int i = count; i >= 0; i-- ){
             if(queue[i] == 0 ){
                 queue[i] = item;
@@ -27,7 +31,6 @@ public class PriorityQueue {
                 break;
             }
         }
-        count = count >= queue.length - 1 ? count : count+ 1;
     }
 
     public void printQueue(){
