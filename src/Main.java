@@ -156,6 +156,11 @@ public class Main {
         priorityQueue.printQueue();
 
 
+        System.out.println("====================================hash maps");
+        System.out.println("first repeated cahracter: " + RepeatedCharacter.firstRepeatedCharacter("rendezvous"));
+        System.out.println("first non-repeated cahracter: " + RepeatedCharacter.firstNonRepeatedCharacter("rrendezvous"));
+
+
 
 
 
