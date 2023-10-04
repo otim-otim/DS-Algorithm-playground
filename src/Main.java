@@ -158,6 +158,7 @@ public class Main {
 
         System.out.println("====================================hash maps");
         System.out.println("first repeated cahracter: " + RepeatedCharacter.firstRepeatedCharacter("rendezvous"));
+        System.out.println("first repeated cahracter using set: " + RepeatedCharacter.firstRepeatedCharacter("rendezvous"));
         System.out.println("first non-repeated cahracter: " + RepeatedCharacter.firstNonRepeatedCharacter("rrendezvous"));
 
 

@@ -1,5 +1,7 @@
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Map;
+import java.util.Set;
 
 public class RepeatedCharacter {
 
@@ -14,14 +16,23 @@ public class RepeatedCharacter {
         return null;
     }
 
+    public static  Character firstRepeatedCharacterSet(String string) {
+        char[] charArray = string.toCharArray();
+        Set<Character> set = new HashSet<>();
+        for (int i = 1; i < charArray.length; i++) {
+            if(set.contains(charArray[i]))
+                return charArray[i];
+            set.add(charArray[i]);
+        }
+        return null;
+    }
+
     public static Character firstNonRepeatedCharacter(String string){
         char[] charArray = string.toCharArray();
         Map<Character,Integer > map = new HashMap<>();
         for (int i = 0; i < charArray.length; i++) {
-            if (map.containsKey(charArray[i]))
-                map.put(charArray[i], map.get(charArray[i]) + 1);
-            else
-                map.put(charArray[i], 1);
+            int count = map.containsKey(charArray[i]) ? map.get(charArray[i]) + 1 : 1;
+            map.put(charArray[i],count );
         }
         for (char c: charArray) {
             if(map.get(c) == 1)
