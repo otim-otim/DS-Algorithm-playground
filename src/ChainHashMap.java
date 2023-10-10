@@ -14,7 +14,8 @@ public class ChainHashMap {
         int idx = hash(entry.key);
         LinkedList<Entry> bucketList = entries[idx];
         if(bucketList == null) {
-            bucketList.addFirst(entry);
+            entries[idx] = new LinkedList<>();
+            entries[idx].addLast(entry);
             return;
         }
         //if key exists in bucket
@@ -41,6 +42,17 @@ public class ChainHashMap {
     }
 
     public void remove(int key){
+        int idx = hash(key);
+        if(entries[idx] != null){
+            for (Entry entry : entries[idx]) {
+                if(entry.key == key){
+                    entries[idx].remove(key);
+                    return;
+                }
+            }
+        }
+
+        throw new IllegalStateException();
 
     }
 

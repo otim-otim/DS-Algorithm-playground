@@ -161,6 +161,13 @@ public class Main {
         System.out.println("first repeated cahracter using set: " + RepeatedCharacter.firstRepeatedCharacter("rendezvous"));
         System.out.println("first non-repeated cahracter: " + RepeatedCharacter.firstNonRepeatedCharacter("rrendezvous"));
 
+        ChainHashMap hashMap = new ChainHashMap(5);
+        hashMap.put(new Entry(6,"A"));
+        hashMap.put(new Entry(5,"B"));
+        hashMap.put(new Entry(11,"A+"));
+
+        System.out.println("====================================last hash maps");
+
 
 
 
