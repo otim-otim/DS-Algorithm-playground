@@ -176,6 +176,7 @@ public class Main {
         binaryTree.insert(14);
         binaryTree.insert(16);
 
+        System.out.println("tree has 10? :" + binaryTree.find(10));
 
 
 
