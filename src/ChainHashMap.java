@@ -30,7 +30,18 @@ public class ChainHashMap {
 
     public Entry get(int key){
         int idx = hash(key);
-        return entries[idx];
+        if(entries[idx] != null){
+            for (Entry entry : entries[idx]) {
+                if(entry.key == key)
+                    return entry;
+            }
+
+        }
+        return null;
+    }
+
+    public void remove(int key){
+
     }
 
 
