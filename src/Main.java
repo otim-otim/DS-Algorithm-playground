@@ -168,6 +168,14 @@ public class Main {
 
         System.out.println("====================================last hash maps");
 
+        System.out.println("====================================binary search trees");
+
+        BinarySearchTree binaryTree = new BinarySearchTree();
+        binaryTree.insert(12);
+        binaryTree.insert(10);
+        binaryTree.insert(14);
+        binaryTree.insert(16);
+
 
 
 
