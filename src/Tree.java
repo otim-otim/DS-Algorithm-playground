@@ -60,7 +60,16 @@ public class Tree {
 
     }
 
+    public void traverseInOrder(){
+        traverseInOrder(root);
+    }
 
+    private void traverseInOrder(TreeNode node){
+        if(node == null) return;
+        traversePreOrder(node.leftChild);
+        System.out.println(node.value);
+        traversePreOrder(node.rightChild);
+    }
 
 
 }
