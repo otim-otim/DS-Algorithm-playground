@@ -179,8 +179,23 @@ public class Main {
         System.out.println("tree has 10? :" + binaryTree.find(10));
 
 
+//        normal tree
+        Tree normalTree = new Tree();
+        normalTree.insert(12);
+        normalTree.insert(14);
+        normalTree.insert(17);
+        normalTree.insert(7);
+        normalTree.insert(4);
+        normalTree.insert(9);
+        normalTree.insert(23);
+        normalTree.insert(11);
+        normalTree.insert(5);
 
+        System.out.println("normal tree   pretraversal");
+        normalTree.traversePreOrder();
+        System.out.println("normal tree intraversal");
 
+        normalTree.traverseInOrder();
 
     }
 }
