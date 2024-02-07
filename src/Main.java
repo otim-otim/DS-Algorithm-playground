@@ -196,6 +196,9 @@ public class Main {
         System.out.println("normal tree intraversal");
 
         normalTree.traverseInOrder();
+//
+        System.out.println("traversing post order");
+        normalTree.traversePostOrder();
 
     }
 }
