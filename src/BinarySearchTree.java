@@ -78,5 +78,16 @@ public class BinarySearchTree {
 
     }
 
+    public void traversePostOrder(){
+        traverseInOrder(root);
+    }
 
+    private void traversePostOrder(TreeNode root){
+        if(root == null)
+            return;
+        traverseInOrder(root.rightChild);
+        traverseInOrder(root.leftChild);
+        System.out.println(root.value);
+
+    }
 }
