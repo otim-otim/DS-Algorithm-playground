@@ -10,7 +10,7 @@ public class BinarySearchTree {
 //
 //    }
 
-    TreeNode root = new TreeNode();
+    private TreeNode root = new TreeNode();
 
 
     public void insert(int item) {
@@ -48,6 +48,20 @@ public class BinarySearchTree {
 
         }
         return false;
+
+    }
+
+    public void traversePreorder(){
+        traversePreorder(root);
+    }
+
+    private void traversePreorder(TreeNode root){
+        if(root == null)
+            return;
+        System.out.println(root.value);
+        traversePreorder(root.leftChild);
+        traversePreorder(root.rightChild);
+
 
     }
 }
