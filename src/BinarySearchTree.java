@@ -1,3 +1,5 @@
+import static java.lang.Math.max;
+
 public class BinarySearchTree {
 
 //    private class Node {
@@ -88,6 +90,21 @@ public class BinarySearchTree {
         traverseInOrder(root.rightChild);
         traverseInOrder(root.leftChild);
         System.out.println(root.value);
+
+    }
+
+    public int heightOfTree(){
+        return heightOfNode(root);
+    }
+
+
+    public int heightOfNode(TreeNode node){
+        if(node == null)
+            return -1;
+        if(node.leftChild == null && node.rightChild == null)
+            return 0;
+        return 1 + max( heightOfNode(node.leftChild),heightOfNode(node.rightChild));
+
 
     }
 }
