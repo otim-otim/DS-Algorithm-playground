@@ -81,14 +81,14 @@ public class BinarySearchTree {
     }
 
     public void traversePostOrder(){
-        traverseInOrder(root);
+        traversePostOrder(root);
     }
 
     private void traversePostOrder(TreeNode root){
         if(root == null)
             return;
-        traverseInOrder(root.rightChild);
-        traverseInOrder(root.leftChild);
+        traversePostOrder(root.rightChild);
+        traversePostOrder(root.leftChild);
         System.out.println(root.value);
 
     }
@@ -101,10 +101,30 @@ public class BinarySearchTree {
     public int heightOfNode(TreeNode node){
         if(node == null)
             return -1;
-        if(node.leftChild == null && node.rightChild == null)
+        if(isLeaf(node))
             return 0;
         return 1 + max( heightOfNode(node.leftChild),heightOfNode(node.rightChild));
 
 
     }
+
+    public int min(){
+
+        return min(root);
+    }
+
+    public int min(TreeNode node){
+
+        if(isLeaf(node))
+            return node.value;
+        return  min(node.leftChild);
+
+    }
+
+    public boolean isLeaf(TreeNode node){
+
+        return node.leftChild == null && node.rightChild == null ;
+
+    }
+
 }

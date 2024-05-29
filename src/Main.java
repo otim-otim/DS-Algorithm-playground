@@ -175,6 +175,7 @@ public class Main {
         binaryTree.insert(10);
         binaryTree.insert(14);
         binaryTree.insert(16);
+        binaryTree.insert(4);
 
         System.out.println("tree has 10? :" + binaryTree.find(10));
 
@@ -199,6 +200,9 @@ public class Main {
 //
         System.out.println("traversing post order");
         normalTree.traversePostOrder();
+
+        System.out.println(" binary tree minimum number:" + binaryTree.min());
+//        System.out.println(" normal tree minimum number: " + normalTree.min());
 
     }
 }

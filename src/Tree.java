@@ -82,5 +82,29 @@ public class Tree {
         System.out.println(node.value);
     }
 
+    public int min(){
+
+        return min(root);
+    }
+
+    public int min(TreeNode node){
+        if(node == null)
+            return -1;
+        
+        if(isLeaf(node))
+            return node.value;
+        int left = min(node.leftChild);
+        int right = min(node.rightChild);
+
+        return Math.min(Math.min(left,right), node.value);
+
+
+    }
+
+    public boolean isLeaf(TreeNode node){
+        return node.leftChild == null && node.rightChild == null ;
+
+    }
+
 
 }
