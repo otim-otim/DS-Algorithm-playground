@@ -128,7 +128,7 @@ public class BinarySearchTree {
     }
 
     public boolean isBinarySearchTree(){
-        return isBinarySearchTree(-1, 1000, root);
+        return isBinarySearchTree( Integer.MIN_VALUE, Integer.MAX_VALUE, root);
 
     }
 
