@@ -140,5 +140,21 @@ public class BinarySearchTree {
                 && isBinarySearchTree(node.value +1, max, node.rightChild);
     }
 
+    public void printNodesAtDistance(int distance){
+        printNodesAtDistance(distance, root);
+    }
+
+    public void printNodesAtDistance(int distance, TreeNode node){
+        if(node == null )
+            return;
+        if(distance == 0){
+            System.out.println("nodes at distance: "+node.value);
+            return;
+        }
+        printNodesAtDistance(distance -1,node.leftChild);
+        printNodesAtDistance(distance -1,node.rightChild);
+
+    }
+
 
 }
