@@ -122,12 +122,17 @@ public class Tree {
         }
         return true;
 
+        //mosh implementation
+
 //        if(node1 == null && node2 == null)
 //            return true;
 //        return node1.value == node2.value
 //                && isEqual(node1.leftChild, node2.leftChild)
 //                && isEqual(node1.rightChild, node2.rightChild);
     }
+
+
+
 
 
 }

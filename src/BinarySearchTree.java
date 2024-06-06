@@ -127,4 +127,18 @@ public class BinarySearchTree {
 
     }
 
+    public boolean isBinarySearchTree(){
+        return isBinarySearchTree(-1, 1000, root);
+
+    }
+
+    public boolean isBinarySearchTree(int min , int max, TreeNode node){
+        if(node == null)
+            return true;
+        return min < node.value  && node.value < max
+                && isBinarySearchTree(min, node.value -1, node.leftChild)
+                && isBinarySearchTree(node.value +1, max, node.rightChild);
+    }
+
+
 }

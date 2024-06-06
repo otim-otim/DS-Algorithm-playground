@@ -224,6 +224,7 @@ public class Main {
         normalTree.traversePostOrder();
 
         System.out.println(" binary tree minimum number:" + binaryTree.min());
+        System.out.println(" is this a binary search tree:" + binaryTree.isBinarySearchTree());
 //        System.out.println(" normal tree minimum number: " + normalTree.min());
 
         System.out.println("is tree1 == tree2:" + normalTree1.isEqual(normalTree2));
