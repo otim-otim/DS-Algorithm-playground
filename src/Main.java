@@ -192,6 +192,28 @@ public class Main {
         normalTree.insert(11);
         normalTree.insert(5);
 
+        Tree normalTree1 = new Tree();
+        normalTree1.insert(12);
+        normalTree1.insert(14);
+        normalTree1.insert(17);
+        normalTree1.insert(7);
+        normalTree1.insert(4);
+        normalTree1.insert(9);
+        normalTree1.insert(23);
+        normalTree1.insert(11);
+        normalTree1.insert(5);
+
+        Tree normalTree2 = new Tree();
+        normalTree2.insert(12);
+        normalTree2.insert(14);
+        normalTree2.insert(17);
+        normalTree2.insert(7);
+        normalTree2.insert(4);
+        normalTree2.insert(9);
+        normalTree2.insert(23);
+        normalTree2.insert(11);
+        normalTree2.insert(5);
+
         System.out.println("normal tree   pretraversal");
         normalTree.traversePreOrder();
         System.out.println("normal tree intraversal");
@@ -203,6 +225,8 @@ public class Main {
 
         System.out.println(" binary tree minimum number:" + binaryTree.min());
 //        System.out.println(" normal tree minimum number: " + normalTree.min());
+
+        System.out.println("is tree1 == tree2:" + normalTree1.isEqual(normalTree2));
 
     }
 }

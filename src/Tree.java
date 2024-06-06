@@ -88,7 +88,7 @@ public class Tree {
     }
 
     public int min(TreeNode node){
-        if(node == null)
+        if(root == null)
             return -1;
         
         if(isLeaf(node))
@@ -98,12 +98,35 @@ public class Tree {
 
         return Math.min(Math.min(left,right), node.value);
 
-
     }
 
     public boolean isLeaf(TreeNode node){
+        System.out.println(" is leaf node"+node.value);
         return node.leftChild == null && node.rightChild == null ;
 
+    }
+
+    public boolean isEqual( Tree tree2){
+        return isEqual(this.root, tree2.root);
+
+    }
+
+    public boolean isEqual(TreeNode node1, TreeNode node2){
+        if(node1 != null && node2 != null) {
+            if(node1.value == node2.value){
+                if(!isLeaf(node1) && !isLeaf(node2))
+                    return isEqual(node1.leftChild, node2.leftChild) && isEqual(node1.rightChild, node2.rightChild);
+                return true;
+            }
+            return false;
+        }
+        return true;
+
+//        if(node1 == null && node2 == null)
+//            return true;
+//        return node1.value == node2.value
+//                && isEqual(node1.leftChild, node2.leftChild)
+//                && isEqual(node1.rightChild, node2.rightChild);
     }
 
 
