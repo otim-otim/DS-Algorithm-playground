@@ -230,5 +230,12 @@ public class Main {
 
         System.out.println("is tree1 == tree2:" + normalTree1.isEqual(normalTree2));
 
+        System.out.println("====================================AVL trees");
+
+        AVLTree avlTree = new AVLTree();
+        avlTree.insert(10);
+        avlTree.insert(20);
+        avlTree.insert(30);
+
     }
 }

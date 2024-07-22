@@ -10,7 +10,7 @@ public class AVLTree {
     AVLNode root = null;
 
 
-    public void insert(int item){
+    public void insert2(int item){
         AVLNode current = root;
 
         while(true) {
@@ -43,6 +43,10 @@ public class AVLTree {
 
     }
 
+    public void insert(int item){
+        root = insert(root, item);
+    }
+
     private AVLNode insert(AVLNode node, int item){
         // Base case: If the tree is empty, return a new node
         if (node == null) {
@@ -57,6 +61,9 @@ public class AVLTree {
         } else if (item > node.value) {
             node.rightChild = insert(node.rightChild, item);
         }
+
+        if(!isBalanced(node))
+
 
         // Return the (unchanged) node pointer
         return node;
@@ -76,10 +83,21 @@ public class AVLTree {
         return node.leftChild == null && node.rightChild == null ;
     }
 
-    public boolean isBalanced(){
-
-
+    public boolean isBalanced(AVLNode node){
+        if((heightNode(node.leftChild) - heightNode(node.rightChild)) > 1 || (heightNode(node.leftChild) - heightNode(node.rightChild) < -1))
+            return false;
+        return true;
 
     }
+
+    public void rightRotate(AVLNode node){
+        AVLNode leftNode = node.leftChild;
+        leftNode.rightChild  = node;
+        node.leftChild = null;
+
+        
+    }
+
+
 
 }
