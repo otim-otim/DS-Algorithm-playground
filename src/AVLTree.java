@@ -98,6 +98,12 @@ public class AVLTree {
         
     }
 
+    public void leftRotate(AVLNode node){
+        AVLNode rightNode = node.rightChild;
+        rightNode.leftChild  = node;
+        node.rightChild = null;
 
+
+    }
 
 }
