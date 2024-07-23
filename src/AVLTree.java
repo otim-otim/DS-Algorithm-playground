@@ -63,6 +63,7 @@ public class AVLTree {
         }
 
         if(!isBalanced(node))
+            balanceTree(node);
 
 
         // Return the (unchanged) node pointer
@@ -91,21 +92,39 @@ public class AVLTree {
     }
 
     public int balanceFactor(AVLNode node){
-        return (heightNode(node.leftChild) - heightNode(node.rightChild);
+        return (heightNode(node.leftChild) - heightNode(node.rightChild));
     }
 
     public void rightRotate(AVLNode node){
         AVLNode leftNode = node.leftChild;
+        if(leftNode.rightChild == null)
+            node.leftChild = null;
+        else{
+            if(leftNode.value > node.value ){
+                node.rightChild = leftNode.rightChild;
+            }else
+                node.leftChild = leftNode.rightChild;
+
+        }
         leftNode.rightChild  = node;
-        node.leftChild = null;
 
         
     }
 
     public void leftRotate(AVLNode node){
         AVLNode rightNode = node.rightChild;
+        if(rightNode.leftChild == null)
+            node.rightChild = null;
+        else{
+            if(rightNode.value > node.value ){
+                node.rightChild = rightNode.leftChild;
+            }else
+                node.leftChild = rightNode.leftChild;
+
+        }
+
         rightNode.leftChild  = node;
-        node.rightChild = null;
+
 
 
     }
@@ -114,16 +133,26 @@ public class AVLTree {
         if(node == null)
             return;
 
-        if((heightNode(node.leftChild) - heightNode(node.rightChild)) > 1) { //if tree is left heavy
-            rightRotate(node);
+        if(balanceFactor(node) > 1) { //if tree is left heavy
+            if(balanceFactor(node.leftChild) > 0 )
+                rightRotate(node);
+            else{
+                leftRotate(node);
+                rightRotate(node);
+            }
         }
 
-        if((heightNode(node.leftChild) - heightNode(node.rightChild) < -1)) { //if tree is right heavy
-            leftRotate(node);
+        if(balanceFactor(node) < -1) { //if tree is right heavy
+
+            if (balanceFactor(node.rightChild) < 0)
+                leftRotate(node);
+            else{
+                rightRotate(node);
+                leftRotate(node);
+
+            }
         }
 
-        balanceTree(node.rightChild);
-        balanceTree(node.leftChild);
     }
 
 }
