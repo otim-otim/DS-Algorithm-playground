@@ -71,7 +71,7 @@ public class AVLTree {
 
     }
 
-    public int heightNode(AVLNode node){
+    private int heightNode(AVLNode node){
         if(node == null)
             return -1;
         if(isLeaf(node))
@@ -80,22 +80,22 @@ public class AVLTree {
 
 
     }
-    public boolean isLeaf(AVLNode node){
+    private boolean isLeaf(AVLNode node){
         return node.leftChild == null && node.rightChild == null ;
     }
 
-    public boolean isBalanced(AVLNode node){
+    private boolean isBalanced(AVLNode node){
         if(balanceFactor(node) > 1 || balanceFactor(node) < -1))
             return false;
         return true;
 
     }
 
-    public int balanceFactor(AVLNode node){
+    private int balanceFactor(AVLNode node){
         return (heightNode(node.leftChild) - heightNode(node.rightChild));
     }
 
-    public AVLNode rightRotate(AVLNode node){
+    private AVLNode rightRotate(AVLNode node){
         AVLNode leftNode = node.leftChild;
         if(leftNode.rightChild == null)
             node.leftChild = null;
@@ -112,7 +112,7 @@ public class AVLTree {
         
     }
 
-    public AVLNode leftRotate(AVLNode node){
+    private AVLNode leftRotate(AVLNode node){
         AVLNode rightNode = node.rightChild;
         if(rightNode.leftChild == null)
             node.rightChild = null;
@@ -131,27 +131,20 @@ public class AVLTree {
 
     }
 
-    public AVLNode balanceTree(AVLNode node){
+    private AVLNode balanceTree(AVLNode node){
 
         if(balanceFactor(node) > 1) { //if tree is left heavy
             if(balanceFactor(node.leftChild) > 0 )
                 return rightRotate(node);
-            else{
-                leftRotate(node);
-                return rightRotate(node);
-            }
+            leftRotate(node);
+            return rightRotate(node);
+
         }
-
-        if(balanceFactor(node) < -1) { //if tree is right heavy
-
-            if (balanceFactor(node.rightChild) < 0)
+//else if right heavy
+        if (balanceFactor(node.rightChild) < 0)
                 return leftRotate(node);
-            else{
-                rightRotate(node);
-                return leftRotate(node);
-
-            }
-        }
+        rightRotate(node);
+        return leftRotate(node);
 
     }
 
