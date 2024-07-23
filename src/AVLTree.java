@@ -63,7 +63,7 @@ public class AVLTree {
         }
 
         if(!isBalanced(node))
-            balanceTree(node);
+           return  balanceTree(node);
 
 
         // Return the (unchanged) node pointer
