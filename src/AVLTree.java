@@ -84,10 +84,14 @@ public class AVLTree {
     }
 
     public boolean isBalanced(AVLNode node){
-        if((heightNode(node.leftChild) - heightNode(node.rightChild)) > 1 || (heightNode(node.leftChild) - heightNode(node.rightChild) < -1))
+        if(balanceFactor(node) > 1 || balanceFactor(node) < -1))
             return false;
         return true;
 
+    }
+
+    public int balanceFactor(AVLNode node){
+        return (heightNode(node.leftChild) - heightNode(node.rightChild);
     }
 
     public void rightRotate(AVLNode node){
@@ -104,6 +108,22 @@ public class AVLTree {
         node.rightChild = null;
 
 
+    }
+
+    public void balanceTree(AVLNode node){
+        if(node == null)
+            return;
+
+        if((heightNode(node.leftChild) - heightNode(node.rightChild)) > 1) { //if tree is left heavy
+            rightRotate(node);
+        }
+
+        if((heightNode(node.leftChild) - heightNode(node.rightChild) < -1)) { //if tree is right heavy
+            leftRotate(node);
+        }
+
+        balanceTree(node.rightChild);
+        balanceTree(node.leftChild);
     }
 
 }
