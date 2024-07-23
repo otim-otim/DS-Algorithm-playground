@@ -95,7 +95,7 @@ public class AVLTree {
         return (heightNode(node.leftChild) - heightNode(node.rightChild));
     }
 
-    public void rightRotate(AVLNode node){
+    public AVLNode rightRotate(AVLNode node){
         AVLNode leftNode = node.leftChild;
         if(leftNode.rightChild == null)
             node.leftChild = null;
@@ -107,11 +107,12 @@ public class AVLTree {
 
         }
         leftNode.rightChild  = node;
+        return leftNode;
 
         
     }
 
-    public void leftRotate(AVLNode node){
+    public AVLNode leftRotate(AVLNode node){
         AVLNode rightNode = node.rightChild;
         if(rightNode.leftChild == null)
             node.rightChild = null;
@@ -124,31 +125,30 @@ public class AVLTree {
         }
 
         rightNode.leftChild  = node;
+        return rightNode;
 
 
 
     }
 
-    public void balanceTree(AVLNode node){
-        if(node == null)
-            return;
+    public AVLNode balanceTree(AVLNode node){
 
         if(balanceFactor(node) > 1) { //if tree is left heavy
             if(balanceFactor(node.leftChild) > 0 )
-                rightRotate(node);
+                return rightRotate(node);
             else{
                 leftRotate(node);
-                rightRotate(node);
+                return rightRotate(node);
             }
         }
 
         if(balanceFactor(node) < -1) { //if tree is right heavy
 
             if (balanceFactor(node.rightChild) < 0)
-                leftRotate(node);
+                return leftRotate(node);
             else{
                 rightRotate(node);
-                leftRotate(node);
+                return leftRotate(node);
 
             }
         }
